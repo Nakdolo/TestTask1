@@ -1,5 +1,7 @@
 package src
 
+import "unicode"
+
 func ReverseString(text *string) string {
 	length := len(*text)
 
@@ -15,4 +17,16 @@ func ReverseString(text *string) string {
 	}
 
 	return string(runes)
+}
+
+func CountSymbols(text *string) (count int) {
+	count = 0
+
+	for _, element := range *text {
+		if !unicode.IsLetter(element) && !unicode.IsNumber(element) {
+			count++
+		}
+	}
+
+	return count
 }
