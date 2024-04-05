@@ -1,4 +1,4 @@
-package src
+package main
 
 func ReverseString(text *string) string {
 	length := len(*text)
